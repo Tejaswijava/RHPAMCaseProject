@@ -1,0 +1,20 @@
+JsonObject request = new JsonObject();
+	
+	JsonObject caseSRDto = new JsonObject();
+	caseSRDto.addProperty("srUUID", "srUUID2");
+	caseSRDto.addProperty("requestType", "Advance");
+	caseSRDto.addProperty("channel", "FLO");
+	caseSRDto.addProperty("caseNumber", "");
+	caseSRDto.addProperty("srNumber", "");
+
+	JsonObject caseSR = new JsonObject();
+	caseSR.add("com.processdefinitiontest.pdtest.CaseSRDto", caseSRDto);
+
+	//product1
+	JsonObject caseData = new JsonObject();
+	caseData.add("caseSR", caseSR);
+
+	request.add("case-data", caseData);
+	request.add("case-user-assignments", new JsonObject());
+	request.add("case-group-assignments", new JsonObject());
+	request.add("case-data-restrictions", new JsonObject());
