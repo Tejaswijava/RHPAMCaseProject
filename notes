@@ -18,3 +18,17 @@ JsonObject request = new JsonObject();
 	request.add("case-user-assignments", new JsonObject());
 	request.add("case-group-assignments", new JsonObject());
 	request.add("case-data-restrictions", new JsonObject());
+
+
+
+2.Context data Object accessing as Hashmap
+
+System.out.println("case SR hasObj:"+kcontext.getCaseData().getData("caseSRHash"));
+
+System.out.println("request type from hash map"+((java.util.HashMap)kcontext.getCaseData().getData("caseSRHash")).get("requestType"));
+
+System.out.println("srrequest from hashobj"+((java.util.HashMap)kcontext.getCaseData().getData("caseSRHash")).get("srRequest"));
+
+
+((java.util.HashMap)((java.util.HashMap)kcontext.getCaseData().getData("caseSRHash")).get("srRequest")).get("caseNumber");
+((java.util.HashMap)((java.util.HashMap)kcontext.getCaseData().getData("caseSRHash")).get("srRequest")).put("caseNumber",kcontext.getCaseData().getData("caseId"));
